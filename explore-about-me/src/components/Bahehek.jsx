@@ -15,6 +15,7 @@ const Planet = styled.div`
     height: 5rem;
     border-radius: 100%;
     background-color: yellow;
+    cursor: pointer;
 `;
 
 export default Bahehek;

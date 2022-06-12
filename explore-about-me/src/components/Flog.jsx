@@ -16,6 +16,7 @@ const Planet = styled.div`
     height: 6rem;
     border-radius: 100%;
     background-color: pink;
+    cursor: pointer;
 `;
 
 export default Flog;

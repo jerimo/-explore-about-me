@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 function Ship({ moveToX, moveToY }) {
     console.log(moveToX, moveToY)
@@ -10,6 +10,23 @@ function Ship({ moveToX, moveToY }) {
     );
 }
 
+
+const move = keyframes`
+0%{
+    background:pink;
+}
+
+50%{
+    opacity: 0.5;
+}
+
+100%{
+    bottom: ${props => props.y ? `${props.y}%` : '0'};
+    left: ${props => props.y ? `${props.x}%` : '50%'};
+    opacity: 1;
+}
+`
+
 const Spaceship = styled.div`
     z-index: 9999;
     background-color: #94bde3;
@@ -18,6 +35,8 @@ const Spaceship = styled.div`
     position: absolute;
     bottom: ${props => props.y ? `${props.y}%` : '0'};
     left: ${props => props.y ? `${props.x}%` : '50%'};
+    animation: ${move} 2s infinite;
 `;
+
 
 export default Ship;
